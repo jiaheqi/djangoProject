@@ -1,0 +1,21 @@
+# my.cnf
+[client]
+database=django_db
+user=root
+password=1234
+host=127.0.0.1
+port=3306
+
+[db1]
+database=indexdb
+user=root
+password=1234
+host=127.0.0.1
+port=3306
+
+[db2]
+database=userdb
+user=root
+password=1234
+host=127.0.0.1
+port=3306

@@ -1,0 +1,164 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Hello World</title>#}
+{#</head>#}
+{#<script src = "{% static 'js/jquery-3.6.0.min.js' %}"></script>#}
+{#{% load static %}#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>#}
+{#<script>#}
+{#    $(function (){#}
+{#        $('#bt01').click(function () {#}
+{#        // 使用 $.ajax 进行异步请求#}
+{#        $.ajax({#}
+{#            type: 'GET',#}
+{#            url: "{% url 'index:getHeader' %}",#}
+{#            async: true, // 注意：使用 async: false 会导致浏览器阻塞，不推荐在实际应用中这样做#}
+{#            headers: {#}
+{#                "sign": "123"#}
+{#            },#}
+{#            success: function (data) { // 当请求成功时执行的函数#}
+{#                 // 使用 data 参数获取响应数据#}
+{#                document.getElementById("myDiv").HTML = '<h2>' + data["header"] + '</h2>'; // 使用 .innerHTML 设置元素内容#}
+{#            },#}
+{#            error: function (jqXHR, textStatus, errorThrown) { // 当请求失败时执行的函数#}
+{#                console.error("Error: " + textStatus + ", " + errorThrown);#}
+{#            }#}
+{#        });#}
+{#    });#}
+{#    });#}
+    {#const bt01 = document.getElementById("bt01");#}
+{##}
+{#</script>#}
+{#<body>#}
+{#<span>Hello World</span>#}
+{#<h3>{{ value.title }}</h3>#}
+{#<span>{{ content.content }}</span>#}
+{#<br>#}
+{#<a href="{% url 'index:myvariable' '2024' '07' '24' %}">查看日期</a>#}
+{#<br>#}
+{#<a href="{% url 'index:download_file1' %}">HttpRersponse下载文件</a>#}
+{#<br>#}
+{#<a href="{% url 'index:download_file2' %}">StreamingHttpResponse下载文件</a>#}
+{#<br>#}
+{#<a href="{% url 'index:download_file3' %}">DjangoFileResponse下载文件</a>#}
+{#<form action="" method="post" >#}
+{#    {% csrf_token %}#}
+{#    <label>#}
+{#        <input type="text" name="user">#}
+{#    </label>#}
+{#    <input type="submit" value="提交">#}
+{#</form>#}
+{##}
+{#<h3>hello cookie</h3>#}
+{#<a href="{% url 'index:create' %}">创建Cookie</a>#}
+{#<br>#}
+{#<a href = "{% url 'index:myCookie'%}">查看Cookie</a>#}
+{##}
+{#<h3>hello header</h3>#}
+{#<div id = "myDiv">AJAX获取请求头</div>#}
+{#<button id = "bt01" type="button">改变内容</button>#}
+{##}
+{#<h3>Hello RedirectView</h3>#}
+{#<a href="{% url 'index:turnTo' %}?k=1">TO turnTo</a>#}
+{##}
+{#<h3>Hello,{{ title }}</h3>#}
+{#<table border="1">#}
+{#{% for i in personinfo %}#}
+{#    <tr>#}
+{#        <th>{{ i.id }}</th>#}
+{#        <th>{{ i.name }}</th>#}
+{#        <th>{{ i.age }}</th>#}
+{#    </tr>#}
+{#{% endfor %}#}
+{#</table>#}
+{#<br>#}
+{#{% if is_paginated %}#}
+{#<div class="pagination">#}
+{#    <span class="step-links">#}
+{#        {% if page_obj.has_previous %}#}
+{#            <a href="?page=1">&laquo; first</a>#}
+{#            <a href="?page={{ page_obj.previous_page_number }}">previous</a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.#}
+{#        </span>#}
+{##}
+{#        {% if page_obj.has_next %}#}
+{#            <a href="?page={{ page_obj.next_page_number }}">next</a>#}
+{#            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#<br>#}
+{#<span class = "page-current">#}
+{#    第{{page_obj.number }}页#}
+{#    共{{ page_obj.paginator.num_pages }}页#}
+{#</span>#}
+{#{% endif %}#}
+{#<table border="1">#}
+{#    <tr>#}
+{#        <th>{{ personinfo.name}}</th>#}
+{#        <th>{{ personinfo.age}}</th>#}
+{#    </tr>#}
+{#</table>#}
+{#<h3>Hello,{{ title }} - {{ personinfo.name }}</h3>#}
+{#<form  method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="submit" value="提交">#}
+{#</form>#}
+{#<h3>Hello,{{ title }} - {{ personinfo.name }}</h3>#}
+{#<form  method="post">#}
+{#    {% csrf_token %}#}
+{#    <div>#}
+{#        删除{{personinfo.name }}?#}
+{#    </div>#}
+{#    <input type="submit" value="确定">#}
+{#</form>#}
+{#</div>#}
+{#{% load mytags %}#}
+{#<h3>Hello,自定义标签</h3>#}
+{#{% reversal 'abcdefg' %}#}
+{#</body>#}
+{#</html>#}
+{#{% extends 'base.html' %}#}
+{#{% block body %}#}
+{#<a href="{% url 'index:index' %}">首页</a>#}
+{#<h1>Hello,Django</h1>#}
+{#{% endblock %}#}
+{#导入自定义过滤器文件myfilter#}
+{#{% load myfilter %}#}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<body>#}
+{#<div>替换前：{{ value }}</div>#}
+{#<br>#}
+{#<div>替换后：#}
+{#{{ value | my_replace:'Python:Django' }}#}
+{#</div>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if v.errors %}
+<p>
+    数据出错了，错误信息：{{v.errors }}
+</p>
+    {% else %}
+    <form>
+    {% csrf_token %}
+    <table>
+        {{v.as_table }}
+    </table>
+    <input type="submit" value="提交">
+    </form>
+{% endif %}
+</body>
+</html>

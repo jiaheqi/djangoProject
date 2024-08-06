@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网页</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        header {
+            background: #343a40;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 85%;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #343a40;
+            color: #fff;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .card {
+            background: #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        .card p {
+            margin: 0.5rem 0;
+        }
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+            .card {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的个人网页</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <div class="section">
+                    <h2>个人简介</h2>
+                    <p>在此填写你的个人简介。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="section">
+                    <h2>工作经历</h2>
+                    <p>在此填写你的工作经历。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <div class="section">
+                    <h2>项目展示</h2>
+                    <p>在此填写你参与的项目及描述。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="section">
+                    <h2>联系信息</h2>
+                    <p>在此填写你的联系方式。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>版权所有 &copy; 2024</p>
+    </footer>
+</body>
+</html>
